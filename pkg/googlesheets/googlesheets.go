@@ -144,7 +144,7 @@ func (gs *GoogleSheets) transformSheetToDataFrame(sheet *sheets.GridData, meta m
 
 		fields = append(fields, field)
 	}
-
+	refID = ""                    // only known hack to omit the Query RefId prefix from series label on frontend
 	frame := data.NewFrame(refID, // TODO: shoud set the name from metadata
 		fields...,
 	)
